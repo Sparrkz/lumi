@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Lumi | Adaptive learning that helps next',
-  description: 'A calm adaptive learning experience that helps people understand what they know, where they are, and what they should do next.',
+  title: 'Lumi — Learning that adapts to you',
+  description: 'An adaptive learning environment for every age, background and kind of curiosity. Learn at your own pace, in your own way. Free at launch.',
 };
 
 export default function RootLayout({ children }) {
