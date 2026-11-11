@@ -167,8 +167,8 @@ export default function LandingPage() {
             <p className="lm-closing-copy">Start with a question, a goal, or something you've always wanted to understand. Lumi is being built to make learning more personal, more flexible, and more human.</p>
           </div>
           <div className="lm-closing-action">
-            <a className="lm-button lm-button-light" href="mailto:hello@lumi.study">Stay close to Lumi <span className="lm-arrow">↗</span></a>
-            <small>Free at launch · Made for every starting point</small>
+            <a className="lm-button lm-button-light" href="#experience">Explore the experience <span className="lm-arrow">↗</span></a>
+            <small>Free at launch · Open to every starting point</small>
           </div>
         </div>
       </section>
