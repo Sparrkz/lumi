@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
 
 :root {
   --lm-paper: #F5F0E8;
@@ -11,7 +11,7 @@
   --lm-ochre: #B98249;
   --lm-line: #DCD8CE;
   --lm-display: "DM Serif Display", Georgia, serif;
-  --lm-sans: "Manrope", "Segoe UI", sans-serif;
+  --lm-sans: "Source Sans 3", "Segoe UI", sans-serif;
 }
 
 .lm-site { color: var(--lm-ink); background: var(--lm-paper); font-family: var(--lm-sans); }
@@ -21,7 +21,7 @@
 .lm-header { position: relative; z-index: 10; border-bottom: 1px solid rgba(32,37,31,.12); }
 .lm-header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .lm-brand { display: inline-flex; align-items: center; gap: 10px; font: 31px var(--lm-display); letter-spacing: -.055em; }
-.lm-brand-mark { width: 29px; height: 29px; color: var(--lm-green); }
+.lm-brand-light { color: var(--lm-paper); }\n.lm-brand-light .lm-brand-mark { color: #9BBCA0; }\n.lm-brand-mark { width: 29px; height: 29px; color: var(--lm-green); }
 .lm-nav { display: flex; align-items: center; gap: clamp(22px,3vw,42px); color: #51594F; font-size: 11px; font-weight: 600; }
 .lm-nav a:hover, .lm-footer a:hover { color: var(--lm-green); }
 .lm-header-cta, .lm-button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 20px; padding: 0 19px; border: 1px solid var(--lm-ink); background: var(--lm-ink); color: var(--lm-paper) !important; font: 700 11px var(--lm-sans); transition: background .2s ease, border-color .2s ease, transform .2s ease; }
