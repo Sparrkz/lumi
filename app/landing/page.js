@@ -1,29 +1,193 @@
-const journeys = [
-  { n: "01", title: "Build strong foundations", text: "Reading, numbers, language, reasoning and the ideas that make future learning easier.", tag: "For growing minds", tone: "sage" },
-  { n: "02", title: "Explore what interests you", text: "Follow a question, understand a subject more deeply, or discover something completely new.", tag: "For the curious", tone: "ochre" },
-  { n: "03", title: "Develop practical skills", text: "Learn by making, solving, experimenting and applying knowledge to real situations.", tag: "For hands-on learners", tone: "sky" },
-  { n: "04", title: "Grow at work and beyond", text: "Build professional capabilities, prepare for new opportunities and keep adapting.", tag: "For every next chapter", tone: "clay" },
-];
-const principles = [
-  ["01", "It starts with you", "Lumi takes your goals, experience and what you already understand into account. You do not have to start from somebody else's beginning."],
-  ["02", "The path can change", "When another explanation, pace or kind of practice would help, the learning experience can adjust with you."],
-  ["03", "Understanding goes further", "Learning is more than finishing a lesson. It is practice, application, reflection and lasting capability."],
-];
+import "./landing.css";
+import AdaptiveDemo from "./AdaptiveDemo";
+
 function Brand({ light = false }) {
-  return <a className={`brand ${light ? "brand-light" : ""}`} href="/" aria-label="Lumi home"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3.5C19.8 11.2 24.8 16.2 32.5 18C24.8 19.8 19.8 24.8 18 32.5C16.2 24.8 11.2 19.8 3.5 18C11.2 16.2 16.2 11.2 18 3.5Z" fill="currentColor"/><circle cx="27.5" cy="8.5" r="2.5" fill="#C27D38"/></svg><span>Lumi</span></a>;
+  return (
+    <a className={`lm-brand ${light ? "lm-brand-light" : ""}`} href="/landing" aria-label="Lumi home">
+      <svg className="lm-brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+        <path d="M18 2.5C20.1 11.1 24.9 15.9 33.5 18C24.9 20.1 20.1 24.9 18 33.5C15.9 24.9 11.1 20.1 2.5 18C11.1 15.9 15.9 11.1 18 2.5Z" fill="currentColor" />
+        <circle cx="27.5" cy="8.5" r="2.2" fill="#B98249" />
+      </svg>
+      <span>Lumi</span>
+    </a>
+  );
 }
-export default function HomePage() {
-  return <main className="site-shell">
-    <header className="site-header"><div className="container header-inner"><Brand/><nav aria-label="Main navigation"><a href="#why">Why Lumi</a><a href="#journeys">Learning journeys</a><a href="#approach">How it works</a></nav><a className="button button-dark header-cta" href="#start">Get to know Lumi <span>↗</span></a></div></header>
-    <section className="hero"><div className="container hero-grid">
-      <div className="hero-copy"><p className="eyebrow"><i/> A learning environment for life</p><h1>No two minds are the same. <em>Why should two learning paths be?</em></h1><p className="hero-lede">Whatever you want to understand, wherever you are starting from, Lumi helps make the journey yours.</p><div className="hero-actions"><a className="button button-green" href="#journeys">Explore what you can learn <span>↗</span></a><a className="text-link" href="#approach">Discover how Lumi works ↓</a></div><p className="hero-note"><b>✳</b> For every age. Every background. Every kind of curiosity.</p></div>
-      <div className="hero-art" aria-label="Illustration of different learning paths"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="art-label">● YOUR STARTING POINT</div><div className="art-core"><span className="core-sun"/><strong>Lumi</strong><small>your learning space</small></div><div className="node node-one"><b>Aa</b> Understand</div><div className="node node-two"><b>◌</b> Explore</div><div className="node node-three"><b>↗</b> Apply</div><div className="node node-four"><b>✳</b> Grow</div><div className="art-caption">— A path that moves with you</div></div>
-    </div><div className="container hero-foot"><span>LEARNING SHOULD FEEL LIKE POSSIBILITY</span><i/><span>NOT A ONE-SIZE-FITS-ALL ROUTE</span></div></section>
-    <section className="intro section" id="why"><div className="container intro-grid"><div className="section-index">01 / THE IDEA <i/></div><div><p className="eyebrow">A different way to think about learning</p><h2>Learning should <em>adapt to the human.</em></h2><p className="intro-lede">People bring different experiences, strengths, questions and ways of making sense of the world. Yet learning is often presented as one fixed route, at one fixed pace.</p><p className="body-copy">Lumi is being built around a simple belief: the system should respond to the learner, not ask every learner to fit the system. It is a space to build understanding over time, in ways that connect to real life.</p><div className="belief"><b>✳</b> There is no standard learner. There should be no standard path.</div></div></div></section>
-    <section className="journeys section" id="journeys"><div className="container"><div className="section-heading"><div><span className="section-index">02 / YOUR WORLD</span><p className="eyebrow">One space. Countless directions.</p><h2>What would you like <em>to learn?</em></h2></div><p className="section-aside">Learning does not belong to a classroom, a career stage or a particular age. Start with what matters to you.</p></div><div className="journey-grid">{journeys.map(j => <article className={`journey-card ${j.tone}`} key={j.n}><div className="journey-top"><span>{j.n}</span><b>↗</b></div><div><small>{j.tag}</small><h3>{j.title}</h3><p>{j.text}</p></div></article>)}</div><p className="journey-note">✳ These are starting points, not boxes. Your interests and goals can change as you do.</p></div></section>
-    <section className="approach section" id="approach"><div className="container approach-grid"><div><span className="section-index">03 / THE EXPERIENCE</span><p className="eyebrow">A journey that responds</p><h2>Not just what you learn. <em>How you get there.</em></h2><p className="body-copy">Lumi pays attention to what you are trying to achieve and what your learning shows along the way. It can help you find another explanation, spend more time with an idea or move toward putting it into practice.</p><div className="principles">{principles.map(p=><div className="principle" key={p[0]}><span>{p[0]}</span><div><h3>{p[1]}</h3><p>{p[2]}</p></div></div>)}</div></div><div className="experience"><div className="experience-top"><span>THE LUMI APPROACH</span><b>● IN YOUR OWN TIME</b></div><h3>One idea.<br/><em>More than one way in.</em></h3><div className="modes"><div><b>Aa</b><strong>Read</strong><small>Clear explanations</small></div><div><b>◌</b><strong>See</strong><small>Visual connections</small></div><div><b>↗</b><strong>Try</strong><small>Practice and explore</small></div></div><div className="experience-line"><span>● Understand</span><i>→</i><span>● Practice</span><i>→</i><span>● Apply</span></div><p>Different ways to engage. One goal: meaningful understanding.</p><b className="experience-star">✳</b></div></div></section>
-    <section className="values section"><div className="container"><span className="section-index">04 / WHAT MATTERS</span><p className="eyebrow">Designed around people</p><h2>Room to learn.<br/><em>Room to be yourself.</em></h2><div className="values-grid"><article><b>↗</b><h3>Your pace</h3><p>No forced speed. Take the time you need, revisit an idea or move forward when you are ready.</p></article><article><b>◌</b><h3>Your way</h3><p>Explore different ways of understanding. No labels, assumptions or single definition of a learner.</p></article><article><b>⌂</b><h3>Your real life</h3><p>Connect learning to the things you want to do, make, understand and experience beyond a lesson.</p></article><article><b>✳</b><h3>Your growth</h3><p>Focus on what you can understand and do, not just how much content you have completed.</p></article></div></div></section>
-    <section className="closing" id="start"><div className="container"><b className="closing-mark">✳</b><p className="eyebrow">A new kind of learning space</p><h2>There is more than one way <em>to become capable.</em></h2><p>Lumi is being built for everyone who wants to keep learning, at every stage of life.</p><div className="closing-actions"><span>● Free at launch</span><a className="button button-light" href="#why">Back to the beginning ↑</a></div></div></section>
-    <footer className="footer"><div className="container footer-main"><div><Brand light/><p>An adaptive learning environment for life.</p></div><div className="footer-links"><div><b>EXPLORE</b><a href="#why">Why Lumi</a><a href="#journeys">Learning journeys</a><a href="#approach">How it works</a></div><div><b>THE BELIEF</b><span>Human first</span><span>Adapt, don't force</span><span>Capability over completion</span></div></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Lumi. Made for the lifelong learner.</span><span>No two minds are the same. <b>✳</b></span></div></footer>
-  </main>;
+
+const moments = [
+  {
+    number: "01 / BEGIN",
+    title: "I'm starting from zero.",
+    copy: "You deserve a first step that makes sense, without being expected to know what came before.",
+  },
+  {
+    number: "02 / REFRAME",
+    title: "I've tried before. It never clicked.",
+    copy: "Needing another explanation does not mean you cannot learn it. It may mean you need another way in.",
+  },
+  {
+    number: "03 / EXTEND",
+    title: "I'm ready to take this further.",
+    copy: "When the foundations are there, learning should open up—not keep you repeating what you already know.",
+  },
+];
+
+const principles = [
+  {
+    number: "01",
+    title: "Understand the starting point",
+    copy: "A learner's goals, existing knowledge and questions matter more than an assumed age or level.",
+  },
+  {
+    number: "02",
+    title: "Respond to what happens",
+    copy: "When an idea is unclear, the next step should help make it clearer. When understanding grows, the journey can move with it.",
+  },
+  {
+    number: "03",
+    title: "Keep learning connected",
+    copy: "Knowledge should lead somewhere: to new questions, useful skills, deeper understanding and real-life application.",
+  },
+];
+
+export default function LandingPage() {
+  return (
+    <main className="lm-site">
+      <header className="lm-header">
+        <div className="lm-wrap lm-header-inner">
+          <Brand />
+          <nav className="lm-nav" aria-label="Main navigation">
+            <a href="#why-lumi">Why Lumi</a>
+            <a href="#experience">The experience</a>
+            <a href="#approach">Our approach</a>
+          </nav>
+          <a className="lm-header-cta" href="#start">Explore Lumi <span className="lm-arrow">↗</span></a>
+        </div>
+      </header>
+
+      <section className="lm-hero">
+        <div className="lm-wrap lm-hero-grid">
+          <div className="lm-hero-copy">
+            <p className="lm-hero-kicker"><i /> A different kind of learning space</p>
+            <h1>Learning should never make you feel like <em>you're the problem.</em></h1>
+            <p className="lm-hero-lede">Maybe you're starting from zero. Maybe it never clicked before. Maybe you're ready to go further. Wherever you begin, learning should make room for you.</p>
+            <div className="lm-hero-actions">
+              <a className="lm-button" href="#experience">See how learning can adapt <span className="lm-arrow">↗</span></a>
+              <a className="lm-text-link" href="#why-lumi">Why Lumi exists <span>↓</span></a>
+            </div>
+            <p className="lm-hero-note">No assumed starting point. No single way to understand.</p>
+          </div>
+          <div className="lm-hero-art" role="img" aria-label="An abstract illustration of different learning paths meeting around one learner">
+            <div className="lm-art-sheet">
+              <span className="lm-art-index">FIG. 01 — THE LEARNER, NOT THE SYSTEM</span>
+              <div className="lm-art-core">
+                <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3C22 12 28 18 37 20C28 22 22 28 20 37C18 28 12 22 3 20C12 18 18 12 20 3Z" fill="currentColor"/></svg>
+                <strong>Lumi</strong><small>your learning space</small>
+              </div>
+              <div className="lm-art-path lm-path-one"><b>Aa</b><span>Understand</span></div>
+              <div className="lm-art-path lm-path-two"><b>◌</b><span>Explore</span></div>
+              <div className="lm-art-path lm-path-three"><b>↗</b><span>Apply</span></div>
+              <div className="lm-art-path lm-path-four"><b>✳</b><span>Grow</span></div>
+              <span className="lm-art-caption">A path that moves with you.</span>
+            </div>
+          </div>
+        </div>
+        <div className="lm-wrap lm-hero-bottom"><span>LEARNING IS NOT A MEASURE OF WORTH</span><i /><span>IT IS A WAY TO GROW</span></div>
+      </section>
+
+      <section className="lm-section lm-opening" id="why-lumi">
+        <div className="lm-wrap">
+          <div className="lm-section-grid">
+            <span className="lm-section-marker">01 / THE BELIEF</span>
+            <div>
+              <span className="lm-kicker">A more human starting point</span>
+              <h2 className="lm-section-title">You are not behind. You are <em>somewhere on your way.</em></h2>
+              <p className="lm-opening-lede">Being a learner should not mean keeping up with somebody else's pace, pretending to understand, or feeling that you have missed your chance.</p>
+              <p className="lm-opening-copy">People arrive with different experiences, strengths, questions and ways of making sense of the world. Lumi is being built around the belief that learning should respond to those differences—not erase them.</p>
+            </div>
+          </div>
+          <div className="lm-moments">
+            {moments.map((moment) => (
+              <article className="lm-moment" key={moment.number}>
+                <small>{moment.number}</small>
+                <h3>{moment.title}</h3>
+                <p>{moment.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className="lm-domain-line">
+            <span>ROOM FOR WHAT YOU WANT TO LEARN</span>
+            <b>Foundations</b><b>Languages</b><b>Science & ideas</b><b>Practical skills</b><b>Professional growth</b>
+          </div>
+        </div>
+      </section>
+
+      <section className="lm-section lm-demo-section" id="experience">
+        <div className="lm-wrap">
+          <div className="lm-demo-intro">
+            <div>
+              <span className="lm-section-marker">02 / SEE THE DIFFERENCE</span>
+              <h2 className="lm-section-title">The next step should depend on <em>where you are.</em></h2>
+            </div>
+            <p>Adaptivity is not just a choice of format. It is noticing what a learner needs and responding in a meaningful way.</p>
+          </div>
+          <AdaptiveDemo />
+        </div>
+      </section>
+
+      <section className="lm-section lm-how" id="approach">
+        <div className="lm-wrap">
+          <div className="lm-how-heading">
+            <div>
+              <span className="lm-section-marker">03 / THE APPROACH</span>
+              <h2 className="lm-section-title">A learning journey that can <em>move with you.</em></h2>
+            </div>
+            <p>Lumi's design starts with the learner—not a fixed grade, a predetermined pace, or an assumption about what someone should already know.</p>
+          </div>
+          <div className="lm-how-grid">
+            {principles.map((principle) => (
+              <article className="lm-how-item" key={principle.number}>
+                <span className="lm-how-number">{principle.number} /</span>
+                <h3>{principle.title}</h3>
+                <p>{principle.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className="lm-guardrail">
+            <b>✳</b>
+            <p><strong>Not a race. Not a ranking.</strong> Progress is about what becomes clearer, what you can do, and where your curiosity takes you next—not how quickly you move through a checklist.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="lm-closing" id="start">
+        <div className="lm-wrap lm-closing-inner">
+          <div>
+            <span className="lm-kicker">YOUR NEXT CHAPTER CAN START ANYWHERE</span>
+            <h2>There is room for the way <em>you learn.</em></h2>
+            <p className="lm-closing-copy">Start with a question, a goal, or something you've always wanted to understand. Lumi is being built to make learning more personal, more flexible, and more human.</p>
+          </div>
+          <div className="lm-closing-action">
+            <a className="lm-button lm-button-light" href="mailto:hello@lumi.study">Stay close to Lumi <span className="lm-arrow">↗</span></a>
+            <small>Free at launch · Made for every starting point</small>
+          </div>
+        </div>
+      </section>
+
+      <footer className="lm-footer">
+        <div className="lm-wrap">
+          <div className="lm-footer-main">
+            <div className="lm-footer-brand">
+              <Brand light />
+              <p>Learning that makes room for you.</p>
+            </div>
+            <div className="lm-footer-links">
+              <div><b>DISCOVER</b><a href="#why-lumi">Why Lumi</a><a href="#experience">The experience</a><a href="#approach">Our approach</a></div>
+              <div><b>THE BELIEF</b><span>Human first</span><span>Adapt, don't force</span><span>Understanding over speed</span></div>
+            </div>
+          </div>
+          <div className="lm-footer-bottom"><span>© {new Date().getFullYear()} Lumi. Learning for every starting point.</span><span>Different minds. Room to grow. ✳</span></div>
+        </div>
+      </footer>
+    </main>
+  );
 }
